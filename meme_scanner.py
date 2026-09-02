@@ -55,8 +55,9 @@ def get_robinhood_chain_tokens(limit=MAX_TOKENS_TO_SCAN):
     """
     Pull trending/new tokens on Robinhood Chain via CoinGecko's onchain API.
     Docs: https://www.coingecko.com/en/api/robinhood
+    Network ID confirmed as "robinhood" per CoinGecko changelog (July 1, 2026).
     """
-    url = "https://api.coingecko.com/api/v3/onchain/networks/robinhood-chain/trending_pools"
+    url = "https://api.coingecko.com/api/v3/onchain/networks/robinhood/trending_pools"
     headers = {"x-cg-demo-api-key": COINGECKO_API_KEY} if COINGECKO_API_KEY else {}
     params = {"page": 1}
     try:
